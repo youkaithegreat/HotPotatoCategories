@@ -1,0 +1,131 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#012340"
+    tools:context="com.kevintyang.androidapps.hotpotatocategories.FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="Hot Potato Categories!"
+        android:textColor="#C4D9BA"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:id="@+id/StartStop"
+            android:layout_marginBottom="40sp"
+            android:layout_gravity="center|bottom"
+            android:text="S t a r t"
+            android:gravity="center"
+            android:textColor="#C4D9BA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner"
+            android:clickable="true"
+
+        />
+
+
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="60sp"
+            android:id="@+id/Difficulty"
+            android:layout_marginBottom="105sp"
+            android:layout_gravity="left|bottom"
+            android:text="Easy!"
+            android:gravity="center"
+            android:textColor="#C4D9BA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="60sp"
+            android:id="@+id/Timer"
+            android:layout_marginBottom="105sp"
+            android:layout_gravity="right|bottom"
+            android:text="Time! 30s"
+            android:gravity="center"
+            android:textColor="#C4D9BA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:layout_width="190sp"
+            android:layout_height="60sp"
+            android:id="@+id/Instructions"
+            android:layout_marginBottom="105sp"
+            android:layout_gravity="center|top"
+            android:text="Instructions"
+            android:gravity="center"
+            android:textColor="#C4D9BA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner"
+            android:clickable="true"
+            />
+
+        <TextView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:id="@+id/Clock"
+            android:layout_marginBottom="130sp"
+            android:layout_gravity="center|center_horizontal"
+            android:gravity="center"
+            android:textColor="#C4D9BA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_corner"
+            android:clickable="true"
+            />
+
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_vertical"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
+
+
+    </FrameLayout>
+
+
+</FrameLayout>
