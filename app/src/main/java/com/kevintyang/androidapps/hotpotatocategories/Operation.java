@@ -1,5 +1,7 @@
 package com.kevintyang.androidapps.hotpotatocategories;
 
+import java.util.Random;
+
 /**
  * Created by Kevin on 1/19/2016.
  */
@@ -11,7 +13,6 @@ public class Operation {
     private String cat = "Easy!";
     private int selection = 0;
     private int timerSelection = 30;
-
 
     public int getTimer(){
 
@@ -46,6 +47,9 @@ public class Operation {
         return cat;
     }
 
+    public int getCategory(){
+        return selectCat;
+    }
     public void pickTimer(){
         selection++;
         switch (selection % 5) {
@@ -72,6 +76,5 @@ public class Operation {
 
         return "This game is a fun group game to play with friends or ESL students. \n This game is a hot potato style game where each person \n must say a word in the category on the screen \n before the time runs out! \n Pick your difficult, your time and push start!";
     }
-
 
 }
