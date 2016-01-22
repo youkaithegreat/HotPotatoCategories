@@ -1,31 +1,26 @@
 package com.kevintyang.androidapps.hotpotatocategories;
 
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
+import android.content.Context;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.w3c.dom.Text;
+
 
 public class FullscreenActivity extends AppCompatActivity {
-//?gfhgfh
-    private View mContentView;
 
     private View mControlsView;
 
-    private boolean mVisible;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_fullscreen);
@@ -34,10 +29,7 @@ public class FullscreenActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
-
 
         final TextView mStartStopView = (TextView) findViewById(R.id.StartStop);
         final TextView mDifficultyView = (TextView) findViewById(R.id.Difficulty);
@@ -54,10 +46,11 @@ public class FullscreenActivity extends AppCompatActivity {
             CountDownTimer hello;
 
             public void onClick(View v) {
+                buttonVibrate();
                 if (started == true) {
                     hello.cancel();
                     game.resetTimer();
-                    mClock.setText("" + game.getTimer()/1000);
+                    mClock.setText("" + game.getTimer() / 1000);
                     mStartStopView.setText("Start!");
                     started = false;
                 } else {
@@ -88,7 +81,7 @@ public class FullscreenActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-
+                buttonVibrate();
                 mDifficultyView.setText(game.setCategory());
 
 
@@ -98,8 +91,8 @@ public class FullscreenActivity extends AppCompatActivity {
 
         mTimer.setOnClickListener(new View.OnClickListener() {
 
-
             public void onClick(View v) {
+                buttonVibrate();
                 game.pickTimer();
                 mTimer.setText("Time! " + game.getTimer() + "s");
             }
@@ -109,6 +102,7 @@ public class FullscreenActivity extends AppCompatActivity {
         mInstructions.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                buttonVibrate();
                 mBackground.setTextSize(10);
                 mBackground.setText(game.instructions());
             }
@@ -118,6 +112,7 @@ public class FullscreenActivity extends AppCompatActivity {
         mClock.setOnClickListener(new View.OnClickListener() {
             //unused
             public void onClick(View v) {
+                buttonVibrate();
                 //animate clock eventually
             }
         });
@@ -133,6 +128,11 @@ public class FullscreenActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
+    }
+
+    public void buttonVibrate(){
+        final Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vib.vibrate(150);
     }
 
 
