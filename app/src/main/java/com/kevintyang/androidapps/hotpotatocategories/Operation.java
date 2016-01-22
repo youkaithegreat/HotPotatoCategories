@@ -7,6 +7,8 @@ import java.util.Random;
  */
 public class Operation {
 
+    //methods on this page are clearly labeled and do what the method name says
+    //not any really crazy logic. 
     private int timer = 30;
     private int userSelect = 30;
     private int selectCat = 0;
@@ -43,7 +45,8 @@ public class Operation {
 
     public int getCategory(){
         return selectCat;
-    }
+}
+
     public void pickTimer(){
         selection++;
         switch (selection % 5) {
