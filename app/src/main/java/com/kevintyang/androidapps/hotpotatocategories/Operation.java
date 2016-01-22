@@ -27,7 +27,7 @@ public class Operation {
     public String setCategory(){
 
         selectCat++;
-        switch (selectCat % 5) {
+        switch (selectCat % 3) {
             case 0:
                 cat = "Easy!";
                 break;
@@ -36,12 +36,6 @@ public class Operation {
                 break;
             case 2:
                 cat = "Hard!";
-                break;
-            case 3:
-                cat = "Insane!";
-                break;
-            case 4:
-                cat = "Baby!";
                 break;
         }
         return cat;
