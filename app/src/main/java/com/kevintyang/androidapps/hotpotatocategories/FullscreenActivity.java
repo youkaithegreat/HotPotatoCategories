@@ -105,7 +105,7 @@ public class FullscreenActivity extends AppCompatActivity {
             public void onClick(View v) {
                 buttonVibrate();
                 game.pickTimer();
-                mTimer.setText("Time! " + game.getTimer() + "s");
+                mTimer.setText("Time! " + game.getTimer()/1000 + "s");
             }
         });
 
